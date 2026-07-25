@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: app-bookin-bot
+    env: python
+    region: ohio
+    plan: free
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.2
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///appbookin.db
+      - key: TIMEZONE
+        value: UTC
+      - key: ADMIN_IDS
+        sync: false
+    disk:
+      name: sqlite-data
+      mountPath: /app/data
+      sizeGB: 1
