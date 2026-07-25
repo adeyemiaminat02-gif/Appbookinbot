@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Environment Variables & Secrets
+.env
+
+# Database & Persistent Data
+*.db
+*.sqlite3
+/data/
+
+# Logs
+*.log
+logs/
+
+# Byte-compiled / Export Output
+*.csv
+*.xlsx
+*.pdf
+
+# IDEs
+.vscode/
+.idea/
